@@ -15,6 +15,6 @@ then
     | grep \"ID:\" | tail -1 | tr -d ' ' | cut -f2 -d ':'")
     ssh -l ${PUSH_USER} -i ${RSA_ID} ${SATELLITE} \
     "hammer content-view version promote --content-view \"${CV}\" --organization \"${ORG}\" \
-    --lifecycle-environment-id \"${TESTVM_ENV}\" --id ${VER}"
+    --to-lifecycle-environment-id \"${TESTVM_ENV}\" --id ${VER}"
 fi
 
